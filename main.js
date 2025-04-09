@@ -16,6 +16,10 @@ connection.connect().then(() => {
     console.log("Connected to database")
 });
 
+app.get("/", (req, res) => {
+    res.send("Oh Hi /OwO/")
+})
+
 app.post(
     "/postProject", 
     (req, res) => {
