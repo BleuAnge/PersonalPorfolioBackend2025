@@ -1,8 +1,9 @@
-const { Client } = require("pg");
-const express = require("express");
+import pkg from 'pg';
+const { Client } = pkg;
+import express, { json } from "express";
 
 const app = express();
-app.use(express.json());
+app.use(json());
 
 const connection = new Client({
     host: process.env.DATABASE_HOST,
@@ -164,7 +165,8 @@ app.delete(
     }
 )
 
-
 app.listen(3001, () => {
     console.log("Server started on port 3001")
 })
+
+export default app;

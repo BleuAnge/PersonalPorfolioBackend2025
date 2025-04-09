@@ -1,7 +1,11 @@
 {
+  "type": "module",
   "dependencies": {
     "express": "^5.1.0",
     "node-postgres": "^0.6.2",
     "pg": "^8.14.1"
+  },
+  "scripts": {
+    "vercel-build": "echo hello"
   }
 }
