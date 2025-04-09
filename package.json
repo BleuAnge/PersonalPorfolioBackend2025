@@ -1,5 +1,6 @@
 {
   "name": "personal-portfolio-backend",
+  "type": "module",
   "version": "1.0.0",
   "main": "main.js",
   "dependencies": {
