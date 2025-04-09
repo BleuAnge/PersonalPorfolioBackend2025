@@ -4,6 +4,16 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
+if (process.env.NODE_ENV !== "production") {
+    console.log("DB Config:", {
+        host: process.env.DATABASE_HOST,
+        user: process.env.DATABASE_USERNAME,
+        port: process.env.DATABASE_PORT,
+        password: process.env.DATABASE_PASSWORD,
+        database: process.env.DATABASE_NAME
+    });
+}
+
 const connection = new Client({
     host: process.env.DATABASE_HOST,
     user: process.env.DATABASE_USERNAME,
