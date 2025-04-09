@@ -1,9 +1,8 @@
-import pkg from 'pg';
-const { Client } = pkg;
-import express, { json } from "express";
+const { Client } = require("pg");
+const express = require("express");
 
 const app = express();
-app.use(json());
+app.use(express.json());
 
 const connection = new Client({
     host: process.env.DATABASE_HOST,
@@ -16,13 +15,6 @@ const connection = new Client({
 connection.connect().then(() => {
     console.log("Connected to database")
 });
-
-app.get("/", (req, res) => {
-    res.send({
-        success: true,
-        message: "Hello World"
-    })
-})
 
 app.post(
     "/postProject", 
@@ -172,8 +164,7 @@ app.delete(
     }
 )
 
+
 app.listen(3001, () => {
     console.log("Server started on port 3001")
 })
-
-export default app;
