@@ -17,6 +17,13 @@ connection.connect().then(() => {
     console.log("Connected to database")
 });
 
+app.get("/", (req, res) => {
+    res.send({
+        success: true,
+        message: "Hello World"
+    })
+})
+
 app.post(
     "/postProject", 
     (req, res) => {
